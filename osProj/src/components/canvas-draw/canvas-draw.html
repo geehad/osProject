@@ -1,0 +1,58 @@
+
+    <ion-fab class="firstFab" top left color=dark >
+      <button ion-fab>
+        <ion-icon ios name="ios-color-palette" md="md-color-palette"></ion-icon>
+      </button>
+
+      <ion-fab-list side="right">
+        <button (click)="changeColor('#C91F37')" ion-fab  style="background-color:#C91F37;">
+
+        </button>
+
+
+        <button (click)="changeColor('#19B5FE')" ion-fab style="background-color:#19B5FE;">
+
+        </button>
+
+        <button (click)="changeColor('#5B3256')" ion-fab  style="background-color:#5B3256;">
+
+        </button>
+
+        <button  (click)="changeColor('#FFB61E')" ion-fab style="background-color:#FFB61E;">
+
+        </button>
+
+      </ion-fab-list>
+    </ion-fab>
+
+
+    <ion-fab class="secondFab" top left >
+      <button ion-fab>
+        <ion-icon ios="ios-create"  md="md-create"></ion-icon>
+      </button>
+
+      <ion-fab-list side="right">
+        <button (click)="changeSize(5)" ion-fab >
+          <ion-icon  ios="ios-create" md="md-create">S</ion-icon>
+
+        </button>
+
+        <button (click)="changeSize(15)" ion-fab >
+          <ion-icon   ios="ios-create"  md="md-create" >M</ion-icon>
+        </button>
+
+        <button (click)="changeSize(25)" ion-fab >
+          <ion-icon   ios="ios-create"  md="md-create" >L</ion-icon>
+        </button>
+      </ion-fab-list>
+    </ion-fab>
+
+    <ion-fab class="eraser" top left color=dark >
+      <button  (click)="changeColor('#fff')" ion-fab>
+       <ion-icon ios="ios-hand" md="md-hand"></ion-icon>
+      </button>
+
+    </ion-fab>
+
+
+<canvas #myCanvas (mousedown)="handleStart($event)" (mousemove)="handleMove($event)" (mouseup)="handleEnd($event)"></canvas>

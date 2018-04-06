@@ -1,0 +1,90 @@
+<ion-header>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+</ion-header>
+
+
+
+<ion-content class="masters" >
+
+  <div style="float: left; width: 50%">
+    <canvas-draw ></canvas-draw>
+    </div>
+
+    <ion-fab class="SavedBoards" top left color=dark >
+    <button  ion-fab>
+      <ion-icon ios="ios-images" md="md-images"></ion-icon>
+    </button>
+  </ion-fab>
+
+    <ion-fab class="SnapShot" top left color=dark >
+    <button ion-fab>
+      <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+    </button>
+  </ion-fab>
+
+    <ion-fab class="ShowChat" top left color=dark >
+      <button (click)="Show()" ion-fab>
+        <ion-icon ios="ios-chatbubbles-outline" md="md-chatbubbles"></ion-icon>
+      </button>
+
+  <ion-fab-list side="right">
+  <div  *ngIf="hideMe" class="container-clearfix">
+    <div  class="chat">
+      <div class="chat-header clearfix">
+
+        <img src="../assets/imgs/Chatimg.png" />
+
+        <div class="chat-about">
+          <div class="chat-with">Group Chat</div>
+          <div class="chat-num-messages">room num</div>
+        </div>
+        <i class="fa fa-star"></i>
+      </div> <!-- end chat-header -->
+
+      <div   class="chat-history">
+
+         <ul *ngFor="let data of messages" >
+
+          <li *ngIf="username === data.username">
+           <div class="message-data">
+            <span class="message-data-name" ><i class="fa fa-circle online"></i>{{data.username}}</span>
+           </div>
+          <div class="message my-message">
+             {{data.message}}
+          </div>
+        </li>
+
+          <li *ngIf="username !== data.username" class="clearfix">
+           <div class="message-data align-right">
+            <span class="message-data-name" >{{data.username}}</span> <i class="fa fa-circle me"></i>
+           </div>
+          <div class="message other-message float-right">
+             {{data.message}}
+
+       </div>
+     </li>
+        </ul>
+     <p >{{userTypeMsg}}</p>
+      </div> <!-- end chat-history -->
+
+      <div class="chat-message clearfix">
+        <ion-input [(ngModel)] = "username" placeholder ="userName"> </ion-input>
+        <form #f="ngForm">
+    <ion-grid>
+       <ion-row>
+         <ion-col width-80>
+           <ion-input [(ngModel)] = "chat" name="chatText" (keypress)="eventHandler()"  required placeholder= "type here...."> </ion-input>
+         </ion-col>
+         <ion-col width-20>
+            <button ion-button round (click)="chatSend(f.value,f.valid)" small=true color="dark" full [disabled]="f.valid === false">Send</button>
+         </ion-col>
+       </ion-row>
+    </ion-grid>
+   </form>
+       </div>
+     </div>
+   </div>
+</ion-fab-list>
+</ion-fab>
+</ion-content>

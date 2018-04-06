@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <button ion-item>
+        <ion-icon name='add-circle' item-start></ion-icon>
+        Add new Room
+      </button>
+     
+  <ion-card >
+    <ion-card-header>
+      Available Rooms
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item (click)='room(0)'>
+        <ion-icon name='ios-create' item-start></ion-icon>
+        Room1
+      </button>
+
+      <button ion-item (click)='room(1)'  >
+        <ion-icon name='ios-create' item-start></ion-icon>
+        Room2
+       </button>
+  <button ion-item (click)='room(2)'>
+        <ion-icon name='ios-create' item-start></ion-icon>
+        Room3
+      </button>
+        <button ion-item (click)='room(3)'>
+        <ion-icon name='ios-create' item-start></ion-icon>
+        Room4
+      </button>
+        <button ion-item (click)='room(4)'>
+        <ion-icon name='ios-create' item-start></ion-icon>
+        Room5
+      </button>
+    
+
+
+    </ion-list>
+  </ion-card>
+  <div text-center >
+       <button ion-button color="primary" outline icon-start>
+      <ion-icon name='ios-book-outline' is-active="false"></ion-icon>
+      Notebook
+    </button> 
+
+    <button ion-button (click)='profile()' color="primary" outline icon-start>
+      <ion-icon name='ios-person' is-active="false"></ion-icon>
+      Profile
+    </button> 
+        </div>
+
+
+
+  <img src="../../img/home.jpg"/>
+ 
+</ion-content>

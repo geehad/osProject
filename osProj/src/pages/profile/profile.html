@@ -1,0 +1,59 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home">
+    <ion-card>
+        <img src="https://pbs.twimg.com/profile_images/509529944431407104/PJITGbsA_400x400.jpeg"/>
+        <ion-card-content>
+            <ion-card-title>
+                Yasmine Alaa
+            </ion-card-title>
+          
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            Joined Rooms
+        </ion-card-header>
+        <ion-card-content>
+        
+        </ion-card-content>
+            <ion-list>
+      <button ion-item (click)='room()'>
+        <ion-icon name='ios-create' item-start></ion-icon>
+        Room1
+      </button>
+
+      <button ion-item (click)='room()'>
+        <ion-icon name='ios-create' item-start></ion-icon>
+        Room2
+      </button>
+  <button ion-item (click)='room()'>
+        <ion-icon name='ios-create' item-start></ion-icon>
+        Room3
+      </button>
+        <button ion-item (click)='room()'>
+        <ion-icon name='ios-create' item-start></ion-icon>
+        Room4
+      </button>
+        <button ion-item (click)='room()'>
+        <ion-icon name='ios-create' item-start></ion-icon>
+        Room5
+      </button>
+  
+    </ion-list>
+    </ion-card>
+    <div text-center >
+     <button ion-button color="primary" outline icon-start>
+      <ion-icon name='ios-book-outline' is-active="false"></ion-icon>
+      Notebook
+    </button> 
+    </div>
+</ion-content>
